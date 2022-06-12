@@ -1,5 +1,6 @@
 #include "shell.h"
 
+
 /**
  * main - Entry point to the shell program
  * @argc: Number of command line arguments
@@ -53,12 +54,14 @@ int main(int argc, char *argv[], char *envp[])
 }
 
 
+
 /**
  * prompt_printer - This program prints the prompt if the
  * shell is in interactive mode
  *
  * Return: void
  */
+
 void prompt_printer(void)
 {
 	if ((isatty(STDIN_FILENO) == 1) && (isatty(STDOUT_FILENO) == 1))
@@ -67,17 +70,20 @@ void prompt_printer(void)
 		write(STDERR_FILENO, "$ ", 2);
 }
 
+
 /**
  * handle_sig - Allows ctrl+C to be printed by the shell
  * @n: signum
  *
  * Return: void
  */
+
 void handle_sig(int n __attribute__((unused)))
 {
 	write(STDERR_FILENO, "\n", 1);
 	write(STDERR_FILENO, "$ ", 2);
 }
+
 
 
 /**
@@ -88,6 +94,7 @@ void handle_sig(int n __attribute__((unused)))
  *
  * Return: 1 if the command is executed, 0 otherwise
  */
+
 int cmd_type(char **cmd, char *b)
 {
 	if (is_builtin(cmd, b))
