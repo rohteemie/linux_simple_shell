@@ -8,8 +8,6 @@
  *
  * Return: 1 if command is a builtin, 0 otherwise
  */
-
-
 int is_builtin(char **cmd, char *b)
 {
 	struct builtins builtins = { "env", "exit" };
@@ -31,7 +29,6 @@ int is_builtin(char **cmd, char *b)
 }
 
 
-
 /**
  * logout - This program frees the buffer and
  * exits the program
@@ -40,8 +37,6 @@ int is_builtin(char **cmd, char *b)
  *
  * Return: void
  */
-
-
 void logout(char **cmd, char *b)
 {
 	free(b);
@@ -49,14 +44,12 @@ void logout(char **cmd, char *b)
 	exit(0);
 }
 
-
 /**
  * env_builtin - This program is prints the current
  * environment
  *
  * Return: 0
  */
-
 void env_builtin(void)
 {
 	int i = 0;
