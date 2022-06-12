@@ -10,6 +10,7 @@
  * Return: void
  */
 
+
 void exec_cmd(char *c, char **cmd)
 {
 	pid_t newProcess;
@@ -32,6 +33,7 @@ void exec_cmd(char *c, char **cmd)
 		wait(&status);
 	}
 }
+
 
 /**
  * tokenize - splits a string into an array of tokens
@@ -82,6 +84,7 @@ char **tokenize(char *str)
 	return (tokens);
 }
 
+
 /**
  * free_cmds - This program frees the cmd array
  * @m: pointer to an array of command line
@@ -89,6 +92,7 @@ char **tokenize(char *str)
  *
  * Return: void
  */
+
 void free_cmds(char **m)
 {
 	int index = 0;
