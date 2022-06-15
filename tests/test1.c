@@ -13,7 +13,7 @@ int main(void)
 	char *cmd;
 	char *token;
 	size_t size = 0;
-	ssize_t linesz = 0;
+	/* ssize_t linesz = 0; */
 	
 	write(1, "$ ", 2);
 	getline(&cmd, &size, stdin);
