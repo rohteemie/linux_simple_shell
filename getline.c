@@ -25,7 +25,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 
         if (ptr == NULL)
         {
-                mem = malloc(new_size);
+                mem = malloc(new_size + 1);/*rotimi added +1 here*/
                 if (mem == NULL)
                         return (NULL);
 
@@ -39,7 +39,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
         }
 
         ptr_copy = ptr;
-        mem = malloc(sizeof(*ptr_copy) * new_size);
+        mem = malloc((sizeof(*ptr_copy) * new_size) + 1);/*i add +1 and () here*/
         if (mem == NULL)
         {
                 free(ptr);
@@ -108,7 +108,7 @@ ssize_t _getline(char **lineptr, size_t *n, FILE *stream)
                 return (-1);
         input = 0;
 
-        buffer = malloc(sizeof(char) * 120);
+        buffer = malloc((sizeof(char) * 120) + 1);/*I add +1 and a () this*/
         if (!buffer)
                 return (-1);
 

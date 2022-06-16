@@ -1,11 +1,11 @@
 .TH HSH 1
 .SH NAME
-hsh \- Holberton Shell
+hsh \- ALX Simple Shell
 .SH SYNOPSIS
 .B hsh
 [command] [options ...]
 .SH COPYRIGHT
-hsh \- is a holberton school first trimester project
+hsh \- is a ALX SE Second Collaboration project
 .SH DESCRIPTION
 .B hsh
 is a shell command interpreter that executes command read from the standard input or from file.
