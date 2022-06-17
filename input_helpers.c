@@ -8,50 +8,12 @@ int check_args(char **args);
 
 
 /**
- * get_args - Gets a command from standard input.
- * @line: A buffer to store the command.
- * @exe_ret: The return value of the last executed command.
- *
- * Return: If an error occurs - NULL.
- *         Otherwise - a pointer to the stored command.
- */
-char *get_args(char *line, int *exe_ret)
-{
-	size_t n = 0;
-	ssize_t read;
-	char *prompt = "$ ";
-
-	if (line)
-		free(line);
-
-	read = _getline(&line, &n, STDIN_FILENO);
-	if (read == -1)
-		return (NULL);
-	if (read == 1)
-	{
-		hist++;
-		if (isatty(STDIN_FILENO))
-			write(STDOUT_FILENO, prompt, 2);
-		return (get_args(line, exe_ret));
-	}
-
-	line[read - 1] = '\0';
-	variable_replacement(&line, exe_ret);
-	handle_line(&line, read);
-
-	return (line);
-}
-
-
-
-
-/**
  * handle_args - Gets, calls, and runs the execution of a command.
  * @exe_ret: The return value of the parent process' last executed command.
- * 
+ *
  * Return: If an end-of-file is read - END_OF_FILE (-2).
- * 	If the input cannot be tokenized - -1.
- * 	O/w - The exit value of the last executed command.
+ *      If the input cannot be tokenized - -1.
+ *      O/w - The exit value of the last executed command.
  */
 int handle_args(int *exe_ret)
 {
@@ -90,6 +52,44 @@ int handle_args(int *exe_ret)
 
 	free(front);
 	return (ret);
+}
+
+
+
+
+/**
+ * get_args - Gets a command from standard input.
+ * @line: A buffer to store the command.
+ * @exe_ret: The return value of the last executed command.
+ *
+ * Return: If an error occurs - NULL.
+ *         Otherwise - a pointer to the stored command.
+ */
+char *get_args(char *line, int *exe_ret)
+{
+	size_t n = 0;
+	ssize_t read;
+	char *prompt = "$ ";
+
+	if (line)
+		free(line);
+
+	read = _getline(&line, &n, STDIN_FILENO);
+	if (read == -1)
+		return (NULL);
+	if (read == 1)
+	{
+		hist++;
+		if (isatty(STDIN_FILENO))
+			write(STDOUT_FILENO, prompt, 2);
+		return (get_args(line, exe_ret));
+	}
+
+	line[read - 1] = '\0';
+	variable_replacement(&line, exe_ret);
+	handle_line(&line, read);
+
+	return (line);
 }
 
 

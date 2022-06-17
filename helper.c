@@ -41,7 +41,7 @@ char *get_pid(void)
                 perror("Cant read file");
                 return (NULL);
         }
-        buffer = malloc(120);
+        buffer = malloc(120 + 1);/*rotimi added +1 to this line*/
         if (!buffer)
         {
                 close(file);
