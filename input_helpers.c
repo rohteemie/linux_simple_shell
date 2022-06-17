@@ -104,52 +104,52 @@ char *get_args(char *line, int *exe_ret)
  */
 int call_args(char **args, char **front, int *exe_ret)
 {
-        int ret, index;
+	int ret, index;
 
-        if (!args[0])
-                return (*exe_ret);
-        for (index = 0; args[index]; index++)
-        {
-                if (_strncmp(args[index], "||", 2) == 0)
-                {
-                        free(args[index]);
-                        args[index] = NULL;
-                        args = replace_aliases(args);
-                        ret = run_args(args, front, exe_ret);
-                        if (*exe_ret != 0)
-                        {
-                                args = &args[++index];
-                                index = 0;
-                        }
-                        else
-                        {
-                                for (index++; args[index]; index++)
-                                        free(args[index]);
-                                return (ret);
-                        }
-                }
-                else if (_strncmp(args[index], "&&", 2) == 0)
-                {
-                        free(args[index]);
-                        args[index] = NULL;
-                        args = replace_aliases(args);
-                        ret = run_args(args, front, exe_ret);
-                        if (*exe_ret == 0)
-                        {
-                                args = &args[++index];
-                                index = 0;
-                        }
-                        else
-                        {
-                                for (index++; args[index]; index++)
-                                        free(args[index]);
-                                return (ret);
-                        }
-                }
-        }
-        args = replace_aliases(args);
-        ret = run_args(args, front, exe_ret);
-        return (ret);
+	if (!args[0])
+		return (*exe_ret);
+	for (index = 0; args[index]; index++)
+	{
+		if (_strncmp(args[index], "||", 2) == 0)
+		{
+			free(args[index]);
+			args[index] = NULL;
+			args = replace_aliases(args);
+			ret = run_args(args, front, exe_ret);
+			if (*exe_ret != 0)
+			{
+				args = &args[++index];
+				index = 0;
+			}
+			else
+			{
+				for (index++; args[index]; index++)
+					free(args[index]);
+				return (ret);
+			}
+		}
+		else if (_strncmp(args[index], "&&", 2) == 0)
+		{
+			free(args[index]);
+			args[index] = NULL;
+			args = replace_aliases(args);
+			ret = run_args(args, front, exe_ret);
+			if (*exe_ret == 0)
+			{
+				args = &args[++index];
+				index = 0;
+			}
+			else
+			{
+				for (index++; args[index]; index++)
+					free(args[index]);
+				return (ret);
+			}
+		}
+	}
+	args = replace_aliases(args);
+	ret = run_args(args, front, exe_ret);
+	return (ret);
 }
 
 
@@ -165,29 +165,29 @@ int call_args(char **args, char **front, int *exe_ret)
  */
 int run_args(char **args, char **front, int *exe_ret)
 {
-        int ret, i;
-        int (*builtin)(char **args, char **front);
+	int ret, i;
+	int (*builtin)(char **args, char **front);
 
-        builtin = get_builtin(args[0]);
+	builtin = get_builtin(args[0]);
 
-        if (builtin)
-        {
-                ret = builtin(args + 1, front);
-                if (ret != EXIT)
-                        *exe_ret = ret;
-        }
-        else
-        {
-                *exe_ret = execute(args, front);
-                ret = *exe_ret;
-        }
+	if (builtin)
+	{
+		ret = builtin(args + 1, front);
+		if (ret != EXIT)
+			*exe_ret = ret;
+	}
+	else
+	{
+		*exe_ret = execute(args, front);
+		ret = *exe_ret;
+	}
 
-        hist++;
+	hist++;
 
-        for (i = 0; args[i]; i++)
-                free(args[i]);
+	for (i = 0; args[i]; i++)
+		free(args[i]);
 
-        return (ret);
+	return (ret);
 }
 
 
@@ -202,20 +202,20 @@ int run_args(char **args, char **front, int *exe_ret)
  */
 int check_args(char **args)
 {
-        size_t i;
-        char *cur, *nex;
+	size_t i;
+	char *cur, *nex;
 
-        for (i = 0; args[i]; i++)
-        {
-                cur = args[i];
-                if (cur[0] == ';' || cur[0] == '&' || cur[0] == '|')
-                {
-                        if (i == 0 || cur[1] == ';')
-                                return (create_error(&args[i], 2));
-                        nex = args[i + 1];
-                        if (nex && (nex[0] == ';' || nex[0] == '&' || nex[0] == '|'))
-                                return (create_error(&args[i + 1], 2));
-                }
-        }
-        return (0);
+	for (i = 0; args[i]; i++)
+	{
+		cur = args[i];
+		if (cur[0] == ';' || cur[0] == '&' || cur[0] == '|')
+		{
+			if (i == 0 || cur[1] == ';')
+				return (create_error(&args[i], 2));
+			nex = args[i + 1];
+			if (nex && (nex[0] == ';' || nex[0] == '&' || nex[0] == '|'))
+				return (create_error(&args[i + 1], 2));
+		}
+	}
+	return (0);
 }
