@@ -5,7 +5,8 @@
 ## Description
 In simple_shell project we code from zero our own custom printf function. Our shell must have the same behavior than **sh** shell in output and error. We had to learn about the workflow of a command line interpreter, what's a pid and ppid, learn about manage processes, how to manipulate the environment of the current process, the difference between a function and system call, how to create processes, how to get PATH variables, execute commands with execve. And off course be carefull with memory leaks and write beautiful code with Betty style.
 
-## Usage
+## Usage 
+
 First, you have to clone this repo ```$git clone https://github.com/rohteemie/simple_shell.git```
 
 Compile
@@ -22,21 +23,24 @@ Non-interactive mode
 $ echo "[put_commands and_arguments]" | ./hsh
 ```
 
-## Built-ins
+## Built-ins 
+
 * exit & exit(status)
 	* env
 	* setenv & unsetenv
 
-### Examples
-	<div id="examples"><div/>
+## Examples
 
 	1. Absolute path commands
-	- non interactive
+	- non interactive 
+
 	```bash
 	$ echo "/bin/pwd" | ./hsh
 	$ /home/rohteemie/simple_shell
 	```
-	- interactive mode
+
+	- interactive mode 
+
 	``` bash
 	$ ./hsh
 	./hsh$ /bin/echo hello world
@@ -44,12 +48,15 @@ $ echo "[put_commands and_arguments]" | ./hsh
 	./hsh$ exit
 	$
 	```
+
 	2. short command
-	- non interactive
+	- non interactive 
+
 	```bash
 	$ echo "pwd" | ./hsh
 	$ /home/rohteemie/simple_shell
 	```
+
 	- interactive mode
 	``` bash
 	$ ./hsh
@@ -58,6 +65,7 @@ $ echo "[put_commands and_arguments]" | ./hsh
 	./hsh$ exit
 	$
 	```
+
 	3. built-ins
 	- non interactive
 	```bash
@@ -65,6 +73,7 @@ $ echo "[put_commands and_arguments]" | ./hsh
 	$ echo $?
 	0
 	```
+
 	- interactive mode
 	``` bash
 	$ ./hsh
@@ -82,6 +91,7 @@ $ echo "[put_commands and_arguments]" | ./hsh
 	$ echo $?
 	2
 	```
+
 	``` bash
 	$ echo "non_valid_command" | ./hsh
 	./hsh: 1: non_valid_command: not found
@@ -109,7 +119,7 @@ $ echo "[put_commands and_arguments]" | ./hsh
 
 	For more info about this project you can run the man page:
 
-	`$ ./man_1_simple`
+	`$ ./man_1_simple_shell.3`
 
 ## Authors 
 
