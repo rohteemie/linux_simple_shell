@@ -2,8 +2,20 @@
 <img src="https://i.ibb.co/H4VJ6Yf/linux-simple-shell.png">
 </p>
 
-## Description
-In simple_shell project we code from zero our own custom printf function. Our shell must have the same behavior than **sh** shell in output and error. We had to learn about the workflow of a command line interpreter, what's a pid and ppid, learn about manage processes, how to manipulate the environment of the current process, the difference between a function and system call, how to create processes, how to get PATH variables, execute commands with execve. And off course be carefull with memory leaks and write beautiful code with Betty style.
+## Description 
+
+The simple_shell project is an attempt to replicate the behavior of the Linux sh shell.
+I have invited my friend to collaborate on this project with me as a second pair of eyes, to help identify potential flaws and suggest improvements. This project is also designed with the purpose of assisting beginer Linux developers in understanding the underlying processes and workings of the Linux system, as well as getting them familiar with some concepts in the C programming language.
+
+- **Emulating sh Shell:** Our shell aims to mimic the behavior of the sh shell, both in terms of output and error handling.
+- **Learning Process:** During this project, we delved into:
+  - Understanding the workflow of a command-line interpreter.
+  - Learning about process IDs (pid) and parent process IDs (ppid).
+  - Managing processes and manipulating the environment.
+  - Distinguishing between functions and system calls.
+  - Creating new processes and executing commands with execve.
+  - Handling PATH variables.
+- **Code Quality:** strong emphasis was placed on writing beautiful code following the Betty style guide and most importantly avoiding memory leaks.
 
 ## Usage 
 
