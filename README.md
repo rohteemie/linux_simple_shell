@@ -2,8 +2,6 @@
 <img src="https://i.ibb.co/H4VJ6Yf/linux-simple-shell.png">
 </p>
 
-<h1 align="center"> simple_shell project </h1>
-
 ### Description
 In simple_shell project we code from zero our own custom printf function. Our shell must have the same behavior than **sh** shell in output and error. We had to learn about the workflow of a command line interpreter, what's a pid and ppid, learn about manage processes, how to manipulate the environment of the current process, the difference between a function and system call, how to create processes, how to get PATH variables, execute commands with execve. And off course be carefull with memory leaks and write beautiful code with Betty style.
 
