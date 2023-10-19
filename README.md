@@ -2,10 +2,10 @@
 <img src="https://i.ibb.co/H4VJ6Yf/linux-simple-shell.png">
 </p>
 
-### Description
+## Description
 In simple_shell project we code from zero our own custom printf function. Our shell must have the same behavior than **sh** shell in output and error. We had to learn about the workflow of a command line interpreter, what's a pid and ppid, learn about manage processes, how to manipulate the environment of the current process, the difference between a function and system call, how to create processes, how to get PATH variables, execute commands with execve. And off course be carefull with memory leaks and write beautiful code with Betty style.
 
-### Usage
+## Usage
 First, you have to clone this repo ```$git clone https://github.com/rohteemie/simple_shell.git```
 
 Compile
@@ -22,7 +22,7 @@ Non-interactive mode
 $ echo "[put_commands and_arguments]" | ./hsh
 ```
 
-### Built-ins
+## Built-ins
 * exit & exit(status)
 	* env
 	* setenv & unsetenv
@@ -90,7 +90,8 @@ $ echo "[put_commands and_arguments]" | ./hsh
 	```
 
 
-### Project files
+## Project files 
+
 	| File        | Description |
 	| ----------- | ----------- |
 	| AUTHORS     | File with names of the owners and authors of this project |
@@ -104,12 +105,12 @@ $ echo "[put_commands and_arguments]" | ./hsh
 	| string_funs.c  | First string functions file <br> **_strcat:** concat string (no malloc) <br> **_strlen:** get length of string <br> **rev_string:** reverse a string <br> **_itoa:** convert int to string <br> **_strcmp:** compare two strings |
 	| string_funs2.c  | Second string functions file <br> **_strchr:** search char in string <br> **_strcpy:** copy string in other one <br> **str_concat:** concat string (malloc) <br> **_atoi:** convert string num, to int|
 
+### Full documentation 
 
-### Full documentation
 	For more info about this project you can run the man page:
 
 	`$ ./man_1_simple`
 
-#### Authors
-### Rotimi Owolabi -[@rohteemie](https://github.com/rohteemie)<br>
-### Solomon John - [@slomon](https://github.com/Slomon80)<br>
+## Authors 
+
+- Rotimi Owolabi -[@rohteemie](https://github.com/rohteemie)
