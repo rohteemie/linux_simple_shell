@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://https://www.alxafrica.com/wp-content/uploads/2022/01/header-logo.png">
+<img src="https://i.ibb.co/H4VJ6Yf/linux-simple-shell.png">
 </p>
 
 <h1 align="center"> simple_shell project </h1>
