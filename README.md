@@ -9,12 +9,12 @@ I have invited my friend to collaborate on this project with me as a second pair
 
 - **Emulating sh Shell:** Our shell aims to mimic the behavior of the sh shell, both in terms of output and error handling.
 - **Learning Process:** During this project, we delved into:
-  - Understanding the workflow of a command-line interpreter.
-  - Learning about process IDs (pid) and parent process IDs (ppid).
-  - Managing processes and manipulating the environment.
-  - Distinguishing between functions and system calls.
-  - Creating new processes and executing commands with execve.
-  - Handling PATH variables.
+    - Understanding the workflow of a command-line interpreter.
+    - Learning about process IDs (pid) and parent process IDs (ppid).
+    - Managing processes and manipulating the environment.
+    - Distinguishing between functions and system calls.
+    - Creating new processes and executing commands with execve.
+    - Handling PATH variables.
 - **Code Quality:** strong emphasis was placed on writing beautiful code following the Betty style guide and most importantly avoiding memory leaks.
 
 ## Usage 
@@ -135,4 +135,4 @@ $ echo "[put_commands and_arguments]" | ./hsh
 
 ## Authors 
 
-- Rotimi Owolabi -[@rohteemie](https://github.com/rohteemie)
+- [Rotimi Owolabi](https://github.com/rohteemie)
